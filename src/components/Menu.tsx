@@ -24,19 +24,20 @@ export const Menu = observer(() => {
         return (
           <li
             key={option.name}
-            className={`h-[72px] w-[72px] flex flex-col items-center justify-center ${
-              isSelected ? "bg-slate-200" : ""
-            }`}
+            className={`h-[72px] w-[72px] flex flex-col items-center justify-center ${isSelected ? "bg-slate-200" : ""}`}
           >
             <button
               onClick={() => option.action(store)}
               className={`flex flex-col items-center`}
             >
-              <option.icon size="20" color={isSelected ? "#000" : "#444"} />
+              <option.icon
+                size="20"
+                color={
+                  isSelected ? "#000" : "#444"
+                }
+              />
               <div
-                className={`text-[0.6rem] hover:text-black ${
-                  isSelected ? "text-black" : "text-slate-600"
-                }`}
+                className={`text-[0.6rem] hover:text-black ${isSelected ? "text-black" : "text-slate-600"}`}
               >
                 {option.name}
               </div>
@@ -77,7 +78,27 @@ const MENU_OPTIONS = [
       store.setSelectedMenuOption("Text");
     },
   },
-
+  // {
+  //   name: "Animation",
+  //   icon: MdTransform,
+  //   action: (store: Store) => {
+  //     store.setSelectedMenuOption("Animation");
+  //   },
+  // },
+  // {
+  //   name: "Effect",
+  //   icon: MdMovieFilter,
+  //   action: (store: Store) => {
+  //     store.setSelectedMenuOption("Effect");
+  //   },
+  // },
+  // {
+  //   name: "Fill",
+  //   icon: MdOutlineFormatColorFill,
+  //   action: (store: Store) => {
+  //     store.setSelectedMenuOption("Fill");
+  //   },
+  // },
   {
     name: "Export",
     icon: MdDownload,
