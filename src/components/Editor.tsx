@@ -18,11 +18,11 @@ export const EditorWithStore = () => {
       <Editor></Editor>
     </StoreContext.Provider>
   );
-};
+}
 
 export const Editor = observer(() => {
   const store = React.useContext(StoreContext);
-
+ 
   useEffect(() => {
     const canvas = new fabric.Canvas("canvas", {
       height: 650,
@@ -34,6 +34,7 @@ export const Editor = observer(() => {
     fabric.Object.prototype.cornerStyle = "circle";
     fabric.Object.prototype.cornerStrokeColor = "#0063d8";
     fabric.Object.prototype.cornerSize = 10;
+    fabric.Object.prototype.fill = 'red';
     // canvas mouse down without target should deselect active object
     canvas.on("mouse:down", function (e) {
       if (!e.target) {
